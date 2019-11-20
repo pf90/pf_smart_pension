@@ -4,7 +4,7 @@ require_relative 'smart_parser.rb'
 
 class SmartParserCountTest < Minitest::Test
   def setup
-    @smart_parser = SmartParser.new.parse_file('sample_log.log')
+    @smart_parser = SmartParser.new.parse_file('sample_test.log')
   end
 
   def test_overall_totals
@@ -31,5 +31,10 @@ class SmartParserCountTest < Minitest::Test
     min = ["/index", 1]
     assert_equal @smart_parser[1].first, max
     assert_equal @smart_parser[1].last, min
+  end
+
+  def test_unique_max_and_min
+    empty_parser = SmartParser.new.parse_file('empty_test.log')
+    assert_equal empty_parser.to_s, "[[], []]"
   end
 end
