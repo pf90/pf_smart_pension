@@ -28,7 +28,7 @@ class SmartParserCountTest < Minitest::Test
 
   def test_unique_max_and_min
     max = ["/help_page/1", 5]
-    min = ["index", 1]
+    min = ["/index", 1]
     assert_equal @smart_parser[1].first, max
     assert_equal @smart_parser[1].last, min
   end

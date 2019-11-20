@@ -6,7 +6,7 @@ class SmartParser
     overall_pages = Hash.new(0)
     unique_pages = Hash.new(0)
 
-    lines = file.each do |line| 
+    file.each do |line| 
       full_address = line.split(" ")[0]
       unique_pages[full_address] += 1
 
